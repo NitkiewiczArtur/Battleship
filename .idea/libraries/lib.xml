@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.javafx/javafx-sdk-17/lib" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="https://openjfx.io/javadoc/17/" />
+    </JAVADOC>
+    <SOURCES />
+    <jarDirectory url="file://$USER_HOME$/.javafx/javafx-sdk-17/lib" recursive="false" />
+  </library>
+</component>

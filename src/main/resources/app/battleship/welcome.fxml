@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.battleship.MainController">
+   <children>
+      <Button layoutX="252.0" layoutY="275.0" mnemonicParsing="false" onAction="#onLetsGoButtonClick" text="Let's go!">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Label fx:id="welcomeText" layoutX="176.0" layoutY="108.0" text="Welcome to Battleship!">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nameInput" layoutX="207.0" layoutY="200.0" prefHeight="39.0" prefWidth="188.0" promptText="Player">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Label layoutX="206.0" layoutY="156.0" prefHeight="27.0" prefWidth="188.0" text="Please enter your name">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
