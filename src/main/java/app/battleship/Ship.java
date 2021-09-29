@@ -48,9 +48,11 @@ public class Ship {
         return symbol;
     }
 
+
     public void hit(){
         this.life = life - 1;
-        if(this.life == 0)
+        if(this.life == 0) {
             this.isDestroyed = true;
+        }
     }
 }
