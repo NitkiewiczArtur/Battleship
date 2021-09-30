@@ -51,24 +51,42 @@ public class Grid {
 
     //Checks if you can place a ship in given place
     public String isSelectedPlaceFreeAndInBounds(int length, int x, int y, boolean isVertical){
-        int takenSquares = 0;
         if(isVertical && !(x + length > size)){
             for(int i = 0; i < length; i++){
-                if (battlemap[x + i][y] != '0')
-                    takenSquares++;
+                if (battlemap[x + i][y] != '0' && battlemap[x + i][y] != 'T')
+                    return "You can't place ship on top of another";
+                else if(battlemap[x + i][y] == 'T')
+                    return "You've put a ship too close to another. There must be one square gap between ships";
             }
         } else if(!isVertical && !(y + length > size)){
             for(int i = 0; i < length; i++){
-                if (battlemap[x][y + i] != '0')
-                    takenSquares++;
+                if (battlemap[x][y + i] != '0' && battlemap[x][y + i] != 'T')
+                    return "You can't place ship on top of another";
+                else if(battlemap[x][y + i] == 'T')
+                    return "You've put a ship too close to another. There must be one square gap between ships";
             }
         } else
             return "Out of bounds";
-        if(takenSquares > 0)
-            return x + " " + y + " " + "You've put a ship on a another ship or too close to it";
-        else
-            return "Success";
+        return "Success";
     }
+
+//    public String isSelectedPlaceFreeAndInBounds2(int length, int x, int y, boolean isVertical){
+//        for(int i = 0; i < length; i++){
+//            if(isVertical && !(x + length > size)){
+//                if (battlemap[x + i][y] != '0' && battlemap[x + i][y] != 'T')
+//                    return "You can't place ship on top of another";
+//                else if(battlemap[x + i][y] == 'T')
+//                    return "You've put a ship too close to another. There must be one square gap between ships";
+//            } else if(!isVertical && !(y + length > size)){
+//                if (battlemap[x][y + i] != '0' && battlemap[x][y + i] != 'T')
+//                    return "You can't place ship on top of another";
+//                else if(battlemap[x][y + i] == 'T')
+//                    return "You've put a ship too close to another. There must be one square gap between ships";
+//            } else
+//                return "Out of Bounds";
+//        }
+//        return "Success";
+//    }
 
     //Returns true if you hit the target and false if you miss
     public char shoot(int x, int y) {

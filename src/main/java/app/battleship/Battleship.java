@@ -106,7 +106,6 @@ public class Battleship {
     }
 
     public int[] computerMove(){
-
         Random rand = new Random();
         int x, y;
         int[] huntResult;
@@ -129,12 +128,13 @@ public class Battleship {
             lastHits.add(new int[]{x, y});
             hitTheShip(shotResult, playersFleet);
         }
-        System.out.println("Last hits");
-        for(int[] hit : lastHits)
-            System.out.println(hit[0] + " " + hit[1]);
+//        System.out.println("Last hits");
+//        for(int[] hit : lastHits)
+//            System.out.println(hit[0] + " " + hit[1]);
         return new int[]{x, y};
     }
 
+    //Makes computer sink the ship after it makes a first hit
     private int[] hunt() {
         Random rand = new Random();
         int x, y;
@@ -179,6 +179,8 @@ public class Battleship {
         return result;
     }
 
+    //check whether x,y are inside the grid and
+    //if x,y has already been shot at
     public void addIfViable(int x, int y){
         if(x > -1 && x < 10 && y > -1 && y < 10){
             char mark = playersGrid.getBattlemap()[x][y];

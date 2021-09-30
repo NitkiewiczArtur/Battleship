@@ -13,6 +13,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+
 import java.io.IOException;
 
 public class ShipPlacingController {
@@ -21,6 +22,7 @@ public class ShipPlacingController {
     private Battleship battleship;
     private Label[][] squares;
     char[] symbols = {'C', 'B', 'R', 'D', 'S'};
+    AlertBox alertBox;
 
     @FXML
     private VBox shipBox;
@@ -33,6 +35,7 @@ public class ShipPlacingController {
         battleship = new Battleship();
         fillGridPaneWithLabels();
         createShipButtons();
+        //alertBox = new AlertBox();
     }
 
 
@@ -100,8 +103,10 @@ public class ShipPlacingController {
         if(result.equals("Success")){
             colorTheSquares(square, shipButton, "black");
             dropped = true;
-        } else
+        } else {
+            AlertBox.display("Wrong placement", result);
             dropped = false;
+        }
         event.setDropCompleted(dropped);
         event.consume();
     }
